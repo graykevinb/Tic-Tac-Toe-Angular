@@ -1,0 +1,10 @@
+
+    <table>
+        <tbody id="board-body">
+            <tr *ngFor="let row of height">
+                <td *ngFor="let col of width">
+                    <app-cell [pos]="row + '-' + col"></app-cell>
+                </td>
+            </tr>
+        </tbody>
+    </table>

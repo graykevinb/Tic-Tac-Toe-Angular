@@ -1,0 +1,36 @@
+table {
+    table-layout: fixed;
+    width: 80vmin;
+    height: 80vmin;
+}
+
+#gameWon {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+}
+
+@keyframes badMoveAnimation {
+    from {background-color: red;}
+    to {background-color: gray;}
+}
+
+.badMove {
+    animation-name: badMoveAnimation;
+    animation-duration: 1s;
+}
+td:hover {
+    background-color: gray;
+    color: white;
+}
+
+
+td {
+    width: 33.33%;
+    height: 33.33%;
+    text-align: center;
+    font-size: 5vmin;
+    font-weight: bold;
+    color: gray;
+    border: 5px solid gray;
+}
