@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cell',
@@ -7,8 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CellComponent {
   @Input() pos: string = '';
-
+  @Output() player: string = "";
   move() {
     console.log(this.pos);
+    this.player = "X";
   }
 }
