@@ -1,4 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
+import { EngineService } from '../engine.service';
 
 @Component({
   selector: 'app-cell',
@@ -6,10 +7,13 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./cell.component.css']
 })
 export class CellComponent {
-  @Input() pos: string = '';
+  @Input() row: number = 0;
+  @Input() col: number = 0;
   @Output() player: string = "";
+
+  constructor(private engine: EngineService) { }
+
   move() {
-    console.log(this.pos);
-    this.player = "X";
+    this.player = this.engine.move(this.row, this.col);
   }
 }
