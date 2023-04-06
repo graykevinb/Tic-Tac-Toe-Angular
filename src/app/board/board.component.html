@@ -1,8 +1,8 @@
 <table>
     <tbody id="board-body">
-        <tr *ngFor="let row of height">
-            <td *ngFor="let col of width">
-                <app-cell [row]="row" [col]="col"></app-cell>
+        <tr *ngFor="let rowNum of height">
+            <td *ngFor="let colNum of width">
+                <app-cell [row]="rowNum" [col]="colNum"></app-cell>
             </td>
         </tr>
     </tbody>

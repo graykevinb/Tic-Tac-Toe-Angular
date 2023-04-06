@@ -9,3 +9,25 @@ div {
     font-size: 20vmin;
     font-family: monospace;
 }
+
+.state {
+    animation-name: winAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+}
+
+@keyframes winAnimation {
+    from {}
+    to {
+        background-color: lightgreen;
+
+
+    }
+}
+
+.badMove {
+    animation-name: badMoveAnimation;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
