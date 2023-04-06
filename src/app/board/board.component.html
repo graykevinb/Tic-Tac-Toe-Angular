@@ -1,10 +1,9 @@
-
-    <table>
-        <tbody id="board-body">
-            <tr *ngFor="let row of height">
-                <td *ngFor="let col of width">
-                    <app-cell [row]="row" [col]="col"></app-cell>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<table>
+    <tbody id="board-body">
+        <tr *ngFor="let row of height">
+            <td *ngFor="let col of width">
+                <app-cell [row]="row" [col]="col"></app-cell>
+            </td>
+        </tr>
+    </tbody>
+</table>
