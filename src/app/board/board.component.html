@@ -4,7 +4,7 @@
 <ng-template #notDraw>
 
 </ng-template>
-<table>
+<table [class.restart]="restart">
     <tbody id="board-body">
         <tr *ngFor="let rowNum of height">
             <td [class.mouse-select]="gameRunning" *ngFor="let colNum of width">

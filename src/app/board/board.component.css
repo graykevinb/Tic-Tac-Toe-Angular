@@ -60,3 +60,20 @@ table, td {
     border: 5px solid gray;
     border-collapse: collapse;
 }
+
+.restart {
+    animation-name: restartAnimation;
+    animation-duration: 1s;
+
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+@keyframes restartAnimation {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}

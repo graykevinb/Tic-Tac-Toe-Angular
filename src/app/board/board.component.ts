@@ -12,12 +12,27 @@ export class BoardComponent {
   @Input() height: number[] = this.range(3);
   gameRunning: boolean = true;
   draw: boolean = false;
+  restart: boolean = false;
 
   constructor(private engine: EngineService) {
     this.engine.subscribe({
       next: (x) => {
         this.gameRunning = !x[0];
         this.draw = x[1] === "draw";
+      },
+      error: function (err: any): void {
+        throw new Error('Function not implemented.');
+      },
+      complete: function (): void {
+        throw new Error('Function not implemented.');
+      }
+    });
+
+    this.engine.restartSubscribe({
+      next: (x) => {
+        console.log("flippping");
+        this.restart = true;
+        this.draw = false;
       },
       error: function (err: any): void {
         throw new Error('Function not implemented.');

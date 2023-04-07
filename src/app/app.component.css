@@ -1,5 +1,6 @@
 app-board {
     display: grid;
+    width: 0;
 }
 
 #title {

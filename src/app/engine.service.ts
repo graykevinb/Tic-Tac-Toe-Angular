@@ -18,13 +18,31 @@ export class EngineService {
   private gameOver: boolean = false;
   private moveCount: number = 0;
   gameState: Subject<any>;
+  reset: Subject<boolean>;
 
   constructor() {
     this.gameState = new Subject<[boolean, string[]] | [true, "draw"] | [false, null]>();
+    this.reset = new Subject<boolean>();
   }
 
   subscribe(observer: Observer<[boolean, string[]] | [true, "draw"] | [false, null]>) {
     this.gameState.subscribe(observer);
+  }
+
+  restartSubscribe(observer: Observer<boolean>) {
+    this.reset.subscribe(observer);
+  }
+
+  restart() {
+    this.currentPlayer = "X";
+    this.board = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""]
+    ];
+    this.gameOver = false;
+    this.moveCount = 0;
+    this.reset.next(true);
   }
 
 

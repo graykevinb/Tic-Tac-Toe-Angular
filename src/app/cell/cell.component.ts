@@ -27,6 +27,19 @@ export class CellComponent {
         throw new Error('Function not implemented.');
       }
     });
+
+    this.engine.restartSubscribe({
+      next: (x) => {
+        this.player = "";
+        this.won = false;
+      },
+      error: function (err: any): void {
+        throw new Error('Function not implemented.');
+      },
+      complete: function (): void {
+        throw new Error('Function not implemented.');
+      }
+    });
   }
 
   ngOnInit() {
