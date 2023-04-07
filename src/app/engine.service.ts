@@ -20,10 +20,10 @@ export class EngineService {
   gameState: Subject<any>;
 
   constructor() {
-    this.gameState = new Subject<[boolean, string[]] | [false, null]>();
+    this.gameState = new Subject<[boolean, string[]] | [true, "draw"] | [false, null]>();
   }
 
-  subscribe(observer: Observer<[boolean, string[]] | [false, null]>) {
+  subscribe(observer: Observer<[boolean, string[]] | [true, "draw"] | [false, null]>) {
     this.gameState.subscribe(observer);
   }
 
@@ -34,7 +34,7 @@ export class EngineService {
       this.moveCount++;
       
       this.board[x][y] = this.currentPlayer;
-      const state: [boolean, string[]] | [false, null] = this.checkWin();
+      const state: [boolean, string[]] | [true, "draw"] | [false, null] = this.checkWin();
       this.gameOver = state[0];
       this.gameState.next(state);
       return this.currentPlayer;
@@ -42,7 +42,7 @@ export class EngineService {
     return this.board[x][y];
   }
 
-  checkWin(): [boolean, string[]] | [false, null] {
+  checkWin(): [boolean, string[]] | [true, "draw"] | [false, null] {
     let won = false;
 
     // Check rows
@@ -83,7 +83,7 @@ export class EngineService {
     }
 
     if(this.moveCount === 9) {
-      return [true, []];
+      return [true, "draw"];
     }
 
     return [false, null];

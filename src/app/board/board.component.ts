@@ -11,11 +11,13 @@ export class BoardComponent {
   @Input() width: number[] = this.range(3);
   @Input() height: number[] = this.range(3);
   gameRunning: boolean = true;
+  draw: boolean = false;
 
   constructor(private engine: EngineService) {
     this.engine.subscribe({
       next: (x) => {
         this.gameRunning = !x[0];
+        this.draw = x[1] === "draw";
       },
       error: function (err: any): void {
         throw new Error('Function not implemented.');

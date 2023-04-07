@@ -4,6 +4,41 @@ table {
     height: 75vmin;
 }
 
+.overlay {
+    animation-name: drawAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+
+
+    position: absolute;
+    display: flex;
+    width: 75vmin;
+    height: 75vmin;
+    z-index: 2;
+    cursor: pointer;
+
+    font-weight: 1000;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+}
+
+@keyframes drawAnimation {
+    from {
+        background-color: rgba(0,0,0,0);
+        color: rgba(255, 255, 255, 0);
+        font-size: max(4vw, 13vh);
+    }
+    to {
+        font-size: max(6vw, 15vh);
+        background-color: rgba(0,0,0,0.5);
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
 .mouse-select:hover {
     background-color: gray;
     color: white;
