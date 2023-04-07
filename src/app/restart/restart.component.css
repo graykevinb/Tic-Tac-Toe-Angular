@@ -1,0 +1,26 @@
+button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+svg {
+    --size: max(4vw, 6vh);
+    width: var(--size);
+    height: var(--size);
+}
+
+svg:hover {
+    cursor: pointer;
+    animation-name: hoverAnimation;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hoverAnimation {
+    from {}
+    to {
+        transform: scale(1.1);
+    }
+}
