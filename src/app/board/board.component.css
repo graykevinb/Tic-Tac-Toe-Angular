@@ -4,21 +4,6 @@ table {
     height: 75vmin;
 }
 
-#gameWon {
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-}
-
-@keyframes badMoveAnimation {
-    from {background-color: red;}
-    to {background-color: gray;}
-}
-
-.badMove {
-    animation-name: badMoveAnimation;
-    animation-duration: 1s;
-}
 td:hover {
     background-color: gray;
     color: white;
