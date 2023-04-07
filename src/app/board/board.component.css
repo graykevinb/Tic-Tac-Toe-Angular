@@ -1,7 +1,7 @@
 table {
     table-layout: fixed;
-    width: 80vmin;
-    height: 80vmin;
+    width: 75vmin;
+    height: 75vmin;
 }
 
 #gameWon {

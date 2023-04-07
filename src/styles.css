@@ -4,8 +4,19 @@
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     padding: 0;
     margin: 0;
     align-items: center;
+}
+
+#title {
+    font-size: max(4vw, 10vh);
+    text-decoration: underline;
+    font-family: monospace;
+    color: gray;
+    padding-bottom: 0.2em;
+    padding-top: 0;
+    margin: 0;
 }
