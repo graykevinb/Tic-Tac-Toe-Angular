@@ -16,6 +16,7 @@ export class EngineService {
     ["", "", ""]
   ];
   private gameOver: boolean = false;
+  private moveCount: number = 0;
   gameState: Subject<any>;
 
   constructor() {
@@ -30,8 +31,9 @@ export class EngineService {
   move(x: number, y: number): string {
     this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
     if(this.board[x][y] === "" && !this.gameOver) {
-      this.board[x][y] = this.currentPlayer;
+      this.moveCount++;
       
+      this.board[x][y] = this.currentPlayer;
       const state: [boolean, string[]] | [false, null] = this.checkWin();
       this.gameOver = state[0];
       this.gameState.next(state);
@@ -78,6 +80,10 @@ export class EngineService {
       if(won) {
         return [won, [`0-2`, `1-1`, `2-0`]];
       }
+    }
+
+    if(this.moveCount === 9) {
+      return [true, []];
     }
 
     return [false, null];
