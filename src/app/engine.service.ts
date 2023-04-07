@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Observer, Subject, take } from 'rxjs';
+import { Observer, Subject} from 'rxjs';
 
 
 @Injectable({
@@ -15,6 +15,7 @@ export class EngineService {
     ["", "", ""],
     ["", "", ""]
   ];
+  private gameOver: boolean = false;
   gameState: Subject<any>;
 
   constructor() {
@@ -28,10 +29,12 @@ export class EngineService {
 
   move(x: number, y: number): string {
     this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
-    if(this.board[x][y] === "") {
+    if(this.board[x][y] === "" && !this.gameOver) {
       this.board[x][y] = this.currentPlayer;
-    
-      this.gameState.next(this.checkWin());
+      
+      const state: [boolean, string[]] | [false, null] = this.checkWin();
+      this.gameOver = state[0];
+      this.gameState.next(state);
       return this.currentPlayer;
     }
     return this.board[x][y];
