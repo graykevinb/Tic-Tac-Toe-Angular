@@ -9,6 +9,7 @@ div {
     margin: 0%;
     font-size: 20vmin;
     font-family: monospace;
+    user-select: none;
 }
 
 .state {
@@ -22,7 +23,6 @@ div {
     from {}
     to {
         background-color: lightgreen;
-
         scale: 1.09;
     }
 }
