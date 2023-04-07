@@ -1,3 +1,21 @@
 app-board {
     display: grid;
 }
+
+#title {
+    font-size: max(4vw, 10vh);
+    text-decoration: underline;
+    font-family: monospace;
+    color: gray;
+    padding-bottom: 0.2em;
+    padding-top: 0;
+    margin: 0;
+}
+
+#top-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
