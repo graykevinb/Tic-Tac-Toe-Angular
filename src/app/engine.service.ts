@@ -19,10 +19,10 @@ export class EngineService {
   gameState: Subject<any>;
 
   constructor() {
-    this.gameState = new Subject<any>();
+    this.gameState = new Subject<[boolean, string[]] | [false, null]>();
   }
 
-  subscribe(observer: Observer<any>) {
+  subscribe(observer: Observer<[boolean, string[]] | [false, null]>) {
     this.gameState.subscribe(observer);
   }
 
@@ -50,7 +50,6 @@ export class EngineService {
         return [won, [`${i}-0`, `${i}-1`, `${i}-2`]];
       }
     }
-    
 
     // Check columns
     for(let i = 0; i < this.board.length && !won; i++) {

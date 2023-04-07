@@ -4,7 +4,7 @@ table {
     height: 75vmin;
 }
 
-td:hover {
+.mouse-select:hover {
     background-color: gray;
     color: white;
     opacity: 0.6;
