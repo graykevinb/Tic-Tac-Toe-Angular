@@ -20,3 +20,7 @@ app-board {
     justify-content: center;
 
 }
+
+app-restart {
+    padding-left: 2.3em;
+}
