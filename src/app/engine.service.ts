@@ -35,14 +35,8 @@ export class EngineService {
 
   restart() {
     this.currentPlayer = "X";
-    this.board = [
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""]
-    ];
-    this.gameOver = false;
-    this.moveCount = 0;
     this.reset.next(true);
+
   }
 
 

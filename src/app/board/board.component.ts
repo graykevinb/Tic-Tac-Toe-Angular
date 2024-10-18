@@ -32,6 +32,7 @@ export class BoardComponent {
       next: (x) => {
         console.log("flippping");
         this.restart = true;
+        setTimeout(() => { this.restart = false; }, 1000);
         this.draw = false;
       },
       error: function (err: any): void {

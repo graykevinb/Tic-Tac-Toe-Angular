@@ -1,6 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
 import { EngineService } from '../engine.service';
-import { Observer } from 'rxjs';
 
 @Component({
   selector: 'app-cell',
@@ -30,7 +29,8 @@ export class CellComponent {
 
     this.engine.restartSubscribe({
       next: (x) => {
-        this.player = "";
+        setTimeout(() => {this.player = "";}, 200);
+        //this.player = "";
         this.won = false;
       },
       error: function (err: any): void {
